@@ -40,16 +40,20 @@ const champions = [
 
 
       return(
-        <div className='mx-auto'>
+        <div className="flex items-center justify-center space-x-8 p-4">
+        <div className="w-1/2 max-w-lg">
           <Slider {...settings}>
             {champions.map((champion, index) => (
               <div key={index}>
-                <img src={champion.image} alt={champion.name} className='h-64 object-cover rounded-lg' />
+                <img src={champion.image} alt={champion.name} className="h-64 w-full object-cover rounded-lg" />
               </div>
             ))}
           </Slider>
+        </div>
+        <div className="w-1/2">
           <ChampionLore name={currentChampion.name} lore={currentChampion.lore} />
         </div>
+      </div>
       )
  }
 
