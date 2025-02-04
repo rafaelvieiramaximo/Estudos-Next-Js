@@ -1,37 +1,25 @@
-//Roda no lado do cliente
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import ChampionLore from '../ChampionLore/ChampionLore';
 
-const images = [
-  "/Aphelios.jpeg",
-  "/Jinx.jpg",
-  "/RekSai.jpg"
+const champions = [
+  {
+    name: "Aphelios",
+    image: "/Apelhios.jpeg",
+    lore: "Aphelios, o Arma dos Fiéis, luta em silêncio e mata seus inimigos com um arsenal de armas de pedra lunar."
+  },
+  {
+    name: "Jinx",
+    image: "/Jinx.jpg",
+    lore: "Jinx, a Geniáca do Caos, é uma criminosa maníaca que vive para espalhar destruição e pânico por Piltover e Zaun."
+  },
+  {
+    name: "Rek'Sai",
+    image: "/RekSai.jpg",
+    lore: "Rek'Sai, a Rainha da Xer'Sai, é uma predadora voraz que ronda as areias de Shurima em busca de presas."
+  }
 ];
-
-const Carousel = () => {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000
-  };
-
-  return (
-    <Slider {...settings} className="w-full max-w-4xl mx-auto">
-      {images.map((src, index) => (
-        <div key={index}>
-          <img src={src} alt={`Slide ${index + 1}`} className="w-full h-100 object-cover rounded-lg" />
-        </div>
-      ))}
-    </Slider>
-  );
-};
-
-export default Carousel;
