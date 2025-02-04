@@ -23,3 +23,34 @@ const champions = [
     lore: "Rek'Sai, a Rainha da Xer'Sai, é uma predadora voraz que ronda as areias de Shurima em busca de presas."
   }
 ];
+ const Carousel = () => {
+
+      const [currentChampion, setCurrentChampion] = useState(champions[0]);
+
+      const settings = {
+        dots: true,
+        infinite: true,
+        speed: 200,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        beforeChange: (_: number, next: number) => setCurrentChampion(champions[next])
+      };
+
+
+      return(
+        <div className='w-full max-w-4x1 mx-auto'>
+          <Slider {...settings}>
+            {champions.map((champion, index) => (
+              <div key={index}>
+                <img src={champion.image} alt={champion.name} className='-full h-64 object-cover rounded-lg' />
+              </div>
+            ))}
+          </Slider>
+          <ChampionLore name={currentChampion.name} lore={currentChampion.lore} />
+        </div>
+      )
+ }
+
+ export default Carousel;
