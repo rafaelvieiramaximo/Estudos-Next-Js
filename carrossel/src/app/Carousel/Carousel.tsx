@@ -9,7 +9,7 @@ import ChampionLore from '../ChampionLore/ChampionLore';
 const champions = [
   {
     name: "Aphelios",
-    image: "/Apelhios.jpeg",
+    image: "/Aphelios.jpeg",
     lore: "Aphelios, o Arma dos Fiéis, luta em silêncio e mata seus inimigos com um arsenal de armas de pedra lunar."
   },
   {
@@ -40,11 +40,11 @@ const champions = [
 
 
       return(
-        <div className='w-full max-w-4x1 mx-auto'>
+        <div className='mx-auto'>
           <Slider {...settings}>
             {champions.map((champion, index) => (
               <div key={index}>
-                <img src={champion.image} alt={champion.name} className='-full h-64 object-cover rounded-lg' />
+                <img src={champion.image} alt={champion.name} className='h-64 object-cover rounded-lg' />
               </div>
             ))}
           </Slider>
